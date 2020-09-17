@@ -31,12 +31,12 @@ export default class FilterObject extends Component {
   }
 
   filterObjects(key) {
-      const arr = this.state.unFilteredArray
-      const filteredArr = arr.filter((el) => {
-          return key in el
-      })
+    const arr = this.state.unFilteredArray;
+    const filteredArr = arr.filter((obj) => {
+      return key in obj;
+    });
 
-      this.setState({ filteredArray: filteredArr })
+    this.setState({ filteredArray: filteredArr });
   }
 
   render() {
@@ -57,7 +57,7 @@ export default class FilterObject extends Component {
           Filter
         </button>
         <span className="resultsBox filterObjectRB">
-            Filtered: { JSON.stringify(this.state.filteredArray, null, 10) }
+          Filtered: {JSON.stringify(this.state.filteredArray, null, 10)}
         </span>
       </div>
     );
